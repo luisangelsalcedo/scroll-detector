@@ -1,0 +1,21 @@
+@import 'vars.scss';
+@import 'general.scss';
+
+.sd{
+    .section{
+        height: 100vh;
+        color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        h3{
+            font-size: 3em;
+        }
+
+        &:nth-child(odd){
+            background-color: $primary;
+            color: white;
+        }
+    }
+}
