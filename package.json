@@ -1,6 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "sass": "^1.77.8",
     "vite": "^5.3.3"
   },
@@ -8,6 +9,8 @@
     "watch:scss": "sass --watch assets/scss:assets/css",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "env-cmd -f .env --use-shell \"scp -r ./dist/* %SSH_SERVER%:%REMOTE_DIR%\""
   }
 }
