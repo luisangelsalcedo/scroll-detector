@@ -1,14 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: system-ui;
-  font-size: 16px;
-  border: 0;
-  margin: 0;
-}
-
 .section {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -69,19 +58,4 @@ body {
   transform: rotateX(0deg) rotateY(0);
 }
 
-.sd .section {
-  height: 100vh;
-  color: rgb(83, 0, 128);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sd .section h3 {
-  font-size: 3em;
-}
-.sd .section:nth-child(odd) {
-  background-color: rgb(83, 0, 128);
-  color: white;
-}
-
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=animations.css.map */

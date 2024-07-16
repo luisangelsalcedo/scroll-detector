@@ -1,0 +1,91 @@
+// general animations
+.section{
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+
+    h3{
+        transition: transform .35s ease-in-out;
+    }
+
+    &.active{
+        opacity: 1;
+    }
+}
+
+// custom animations
+#section1{
+    h3{        
+        transform: scale(3);
+    }
+    &.active{
+        h3{
+            transform: scale(1);
+        }
+    }
+}
+
+#section2{
+    h3{        
+        transform: translateX(-500px)
+    }
+    &.active{
+        h3{
+            transform: translateX(0)
+        }
+    }
+}
+
+#section3{
+    h3{        
+        transform: translateX(500px)
+    }
+    &.active{
+        h3{
+            transform: translateX(0)
+        }
+    }
+}
+
+#section4{
+    h3{        
+        transform: translateY(-500px)
+    }
+    &.active{
+        h3{
+            transform: translateY(0)
+        }
+    }
+}
+
+#section5{
+    h3{        
+        transform: translateY(-500px)
+    }
+    &.active{
+        h3{
+            transform: translateY(0)
+        }
+    }
+}
+
+#section6{
+    h3{        
+        transform: rotate(180deg)
+    }
+    &.active{
+        h3{
+            transform: rotate(0)
+        }
+    }
+}
+
+#section7{
+    h3{        
+        transform: rotateX(0deg) rotateY(180deg);
+    }
+    &.active{
+        h3{
+            transform: rotateX(0deg) rotateY(0);
+        }
+    }
+}
