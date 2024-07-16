@@ -1,4 +1,6 @@
 // set
+let lastScrollPosition = 0;
+const root = document.querySelector("body");
 const wrapper = document.querySelector(".sd");
 const sections = wrapper.querySelectorAll(".section");
 
@@ -36,9 +38,16 @@ function scrollDetector() {
     } else {
       section.classList.remove("completely");
     }
-
   });
 
+  // scroll directions
+  const { top } = root.getBoundingClientRect();
+  if (top > lastScrollPosition) {
+      root.setAttribute("data-direction", "up");
+  } else {
+      root.setAttribute("data-direction", "down");
+  }
+  lastScrollPosition = top;
 
 }
 window.addEventListener("scroll", () => scrollDetector());
