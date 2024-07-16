@@ -3,6 +3,7 @@ let lastScrollPosition = 0;
 const root = document.querySelector("body");
 const wrapper = document.querySelector(".sd");
 const sections = wrapper.querySelectorAll(".section");
+let currentSection = sections[0].id;
 
 // init
 sections[0].classList.add("active");
@@ -25,6 +26,13 @@ function scrollDetector() {
 
     if (limitA && limitB) {
       section.classList.add("active");
+      
+      // detected section name
+      if(currentSection != section.id){
+        root.className = ''
+        root.classList.add(section.id)
+        currentSection = section.id
+      }
     } else {
       section.classList.remove("active");
     }  
@@ -37,7 +45,7 @@ function scrollDetector() {
       section.classList.add("completely");
     } else {
       section.classList.remove("completely");
-    }
+    }    
   });
 
   // scroll directions
