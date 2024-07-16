@@ -1,8 +1,10 @@
+// set
 const wrapper = document.querySelector(".sd");
 const sections = wrapper.querySelectorAll(".section");
 
 // init
 sections[0].classList.add("active");
+sections[0].classList.add("completely");
 
 // scroll function
 function scrollDetector() {
@@ -16,14 +18,25 @@ function scrollDetector() {
     let sectionY = Math.round(y);
 
     // add and remove active class
-    let limit1 = displayHeight / 2 > sectionY;
-    let limit2 = sectionY + (sectionHeight - displayHeight / 2) > 0;
+    let limitA = displayHeight / 2 > sectionY;
+    let limitB = sectionY + (sectionHeight - displayHeight / 2) > 0;
 
-    if (limit1 && limit2) {
+    if (limitA && limitB) {
       section.classList.add("active");
     } else {
       section.classList.remove("active");
-    }    
+    }  
+    
+    // add and remove completely class    
+    let limitC = sectionY <= 0;
+    let limitD = sectionY + sectionHeight > 0;
+
+    if (limitC && limitD) {
+      section.classList.add("completely");
+    } else {
+      section.classList.remove("completely");
+    }
+
   });
 
 
